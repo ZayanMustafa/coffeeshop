@@ -1,11 +1,15 @@
-import { HERO_CONTENT } from '@/constant/Home/Hero';
-import { FiCalendar, FiCoffee } from 'react-icons/fi';
+// File: src/sections/mainpage/hero.js
+
+"use client";
+import { Button } from "@/components/ui/button";
+import { HERO_CONTENT } from "@/constant/Home/Hero";
+import { FiCalendar, FiCoffee } from "react-icons/fi";
 
 const Hero = ({ content }) => {
   return (
-    <section 
+    <section
       className="relative h-screen flex items-center justify-center bg-[#6F4E37] overflow-hidden"
-      style={{ paddingTop: '80px' }}
+      style={{ paddingTop: "80px" }}
     >
       {/* Static coffee beans background */}
       <div className="absolute inset-0 opacity-10">
@@ -27,48 +31,51 @@ const Hero = ({ content }) => {
         <div className="flex flex-col lg:flex-row items-center">
           {/* Text content */}
           <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
-            <h1 
+            <h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
-              style={{ color: '#FFFFFF', fontFamily: 'Playfair Display, serif' }}
+              style={{
+                color: "#FFFFFF",
+                fontFamily: "Playfair Display, serif",
+              }}
             >
               {HERO_CONTENT.title}
             </h1>
-            
-            <p 
+
+            <p
               className="text-xl md:text-2xl mb-8 max-w-lg mx-auto lg:mx-0"
-              style={{ color: '#C4A484', fontFamily: 'Inter, sans-serif' }}
+              style={{ color: "#C4A484", fontFamily: "Inter, sans-serif" }}
             >
               {HERO_CONTENT.subtitle}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button
-                className="flex items-center justify-center px-8 py-3 rounded-md font-semibold uppercase tracking-wider transition-colors hover:bg-[#D4A017] hover:shadow-lg"
-                style={{
-                  backgroundColor: '#E5B80B',
-                  color: '#3E2723',
-                  fontFamily: 'Montserrat, sans-serif'
-                }}
+              <Button
+                variant="primary"
+                size="large"
+                icon={FiCalendar}
+                hoverScale={1.1}
+                hoverBgColor="bg-[#C4A484]"
+                hoverTextColor="text-white"
+                onClick={() => console.log("Book table clicked")}
+                className="shadow-lg hover:shadow-xl"
               >
-                <FiCalendar className="mr-2" />
                 {HERO_CONTENT.ctaButton.primary.text}
-              </button>
-              
-              <button
-                className="flex items-center justify-center px-8 py-3 rounded-md font-semibold uppercase tracking-wider border-2 transition-colors hover:bg-white hover:bg-opacity-10 hover:shadow-lg"
-                style={{
-                  borderColor: '#FFFFFF',
-                  color: '#FFFFFF',
-                  fontFamily: 'Montserrat, sans-serif'
-                }}
+              </Button>
+
+              <Button
+                variant="secondary"
+                size="large"
+                icon={FiCoffee}
+                hoverScale={1.1}
+                hoverBgColor="bg-[#E5B80B]"
+                hoverTextColor="text-[#3E2723]"
+                onClick={() => console.log("View menu clicked")}
+                className="shadow-lg hover:shadow-xl"
               >
-                <FiCoffee className="mr-2" />
-                {HERO_CONTENT .ctaButton.secondary.text}
-              </button>
+                {HERO_CONTENT.ctaButton.secondary.text}
+              </Button>
             </div>
-          </div> 
-         
-         
+          </div>
 
           {/* Stats and coffee cup graphic */}
           <div className="lg:w-1/2 relative">
@@ -83,13 +90,19 @@ const Hero = ({ content }) => {
             <div className="grid grid-cols-3 gap-4 mt-12">
               {HERO_CONTENT.stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <p 
+                  <p
                     className="text-4xl md:text-5xl font-bold mb-2"
-                    style={{ color: '#E5B80B', fontFamily: 'Montserrat, sans-serif' }}
+                    style={{
+                      color: "#E5B80B",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
                   >
                     {stat.value}
                   </p>
-                  <p className="text-white font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <p
+                    className="text-white font-medium"
+                    style={{ fontFamily: "Inter, sans-serif" }}
+                  >
                     {stat.label}
                   </p>
                 </div>
