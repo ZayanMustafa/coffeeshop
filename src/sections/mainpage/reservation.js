@@ -3,17 +3,13 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
-// import { RESERVATION_DATA } from '@/constant/Reservation'
 import Link from 'next/link'
 import InputField from '@/components/ui/input';
 import DateTimeInput from '@/components/reservation/DateTimeInput';
 import { Button } from '@/components/ui/button';
 import FeatureCard from '@/components/reservation/FeatureCard';
 import { RESERVATION_DATA } from '@/constant/Reservation';
-// import InputField from '@/components/reservation/InputField'
-// import DateTimeInput from '@/components/reservation/DateTimeInput'
-// import FeatureCard from '@/components/reservation/FeatureCard'
-// import SubmitButton from '@/components/reservation/SubmitButton'
+
 
 const ReservationCTA = () => {
   const [formData, setFormData] = useState({
@@ -169,15 +165,16 @@ const ReservationCTA = () => {
                 <p className="mb-4 font-sans">
                   Let us know if you're celebrating something special - we'll make it memorable!
                 </p>
-                <Link href="/contact" passHref>
+                {/* <Link href="/contact" passHref> */}
                   <motion.a
+                    href="/contact"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="inline-block px-4 py-2 text-sm rounded-md border font-medium border-[#E5B80B] text-[#E5B80B] font-montserrat"
                   >
                     Contact Us
                   </motion.a>
-                </Link>
+                {/* </Link> */}
               </motion.div>
             </div>
           </div>
