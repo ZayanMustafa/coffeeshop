@@ -67,8 +67,8 @@ const Hero = ({ content }) => {
                 size="large"
                 icon={FiCoffee}
                 hoverScale={1.1}
-                hoverBgColor="bg-[#E5B80B]"
-                hoverTextColor="text-[#3E2723]"
+                hoverBgColor="bg-dark-200"
+                hoverTextColor="text-yellow-500"
                 onClick={() => console.log("View menu clicked")}
                 className="shadow-lg hover:shadow-xl"
               >
