@@ -163,9 +163,8 @@ const ReservationCTA = () => {
                   Special Occasions?
                 </h4>
                 <p className="mb-4 font-sans">
-                  Let us know if you're celebrating something special - we'll make it memorable!
+                  Let us know if you&re celebrating something special - we'll make it memorable!
                 </p>
-                {/* <Link href="/contact" passHref> */}
                   <motion.a
                     href="/contact"
                     whileHover={{ scale: 1.05 }}
@@ -174,7 +173,6 @@ const ReservationCTA = () => {
                   >
                     Contact Us
                   </motion.a>
-                {/* </Link> */}
               </motion.div>
             </div>
           </div>
