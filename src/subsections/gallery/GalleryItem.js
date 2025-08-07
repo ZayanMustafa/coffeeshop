@@ -5,6 +5,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useState } from 'react';
 import { FiZoomIn } from 'react-icons/fi';
 
@@ -22,7 +23,9 @@ const GalleryItem = ({ item, index }) => {
       onHoverEnd={() => setIsHovered(false)}
     >
       {/* Actual image instead of placeholder */}
-      <img
+      <Image
+        height={400}
+        width={600}
         src={item.imageUrl}
         alt={item.title}
         className="h-64 w-full object-cover"

@@ -121,7 +121,7 @@ const Testimonials = () => {
                 animate={isVisible ? { opacity: 1 } : {}}
                 transition={{ delay: index * 0.1 + 0.5 }}
               >
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </motion.blockquote>
               
               {/* Author */}

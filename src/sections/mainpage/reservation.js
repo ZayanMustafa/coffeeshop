@@ -163,7 +163,7 @@ const ReservationCTA = () => {
                   Special Occasions?
                 </h4>
                 <p className="mb-4 font-sans">
-                  Let us know if you&re celebrating something special - we'll make it memorable!
+                  Let us know if you&apos;re celebrating something special - we&apos;ll make it memorable!
                 </p>
                   <motion.a
                     href="/contact"

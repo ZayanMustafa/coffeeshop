@@ -119,7 +119,7 @@ const showNotification = (itemName) => {
               </motion.span>
               <div>
                 <p className="font-medium">{notification.message}</p>
-                <p className="text-sm opacity-90">"{notification.item}"</p>
+                <p className="text-sm opacity-90">{notification.item}</p>
               </div>
             </motion.div>
           )}

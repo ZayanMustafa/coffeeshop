@@ -38,7 +38,7 @@ export default function ContactPage() {
         >
           <h1 className="text-4xl font-bold text-[#3E2723] mb-4">Contact Us</h1>
           <p className="text-xl text-[#6F4E37] max-w-2xl mx-auto">
-            We'd love to hear from you! Visit our cafes or reach out digitally.
+            We&apos;d love to hear from you! Visit our cafes or reach out digitally.
           </p>
         </motion.div>
 
