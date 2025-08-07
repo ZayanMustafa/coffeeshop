@@ -26,7 +26,7 @@ const GalleryItem = ({ item, index }) => {
       <Image
         height={400}
         width={600}
-        src={item.imageUrl}
+        src={item.imageUrl || '/coffee.jpg'}
         alt={item.title}
         className="h-64 w-full object-cover"
       />

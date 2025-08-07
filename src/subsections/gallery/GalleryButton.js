@@ -1,4 +1,6 @@
 
+
+
 // components/gallery/ViewMoreButton.jsx
 "use client";
 
@@ -18,7 +20,6 @@ const ViewMoreButton = ({ inView }) => {
         style={{ 
           backgroundColor: '#E5B80B',
           color: '#3E2723',
-          // fontFamily: 'Montserrat, sans-serif'
         }}
         whileHover={{ 
           scale: 1.05,

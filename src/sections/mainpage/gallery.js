@@ -1,4 +1,5 @@
 
+
 // components/gallery/GalleryShowcase.jsx
 "use client";
 
