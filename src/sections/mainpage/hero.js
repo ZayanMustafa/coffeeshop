@@ -1,11 +1,27 @@
+
+
+
 // File: src/sections/mainpage/hero.js
 
 "use client";
 import { Button } from "@/components/ui/button";
 import { HERO_CONTENT } from "@/constant/Home/Hero";
 import { FiCalendar, FiCoffee } from "react-icons/fi";
+import { useMemo } from "react";
 
 const Hero = ({ content }) => {
+
+
+  // Use useMemo to generate random coffee beans positions and sizes
+  const beans = useMemo(() => 
+    Array(20).fill().map(() => ({
+      width: `${Math.random() * 10 + 5}px`,
+      height: `${Math.random() * 10 + 5}px`,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+    }))
+  , []);
+
   return (
     <section
       className="relative h-screen flex items-center justify-center bg-[#6F4E37] overflow-hidden"
@@ -13,17 +29,8 @@ const Hero = ({ content }) => {
     >
       {/* Static coffee beans background */}
       <div className="absolute inset-0 opacity-10">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-[#C4A484]"
-            style={{
-              width: `${Math.random() * 10 + 5}px`,
-              height: `${Math.random() * 10 + 5}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
+        {beans.map((style, i) => (
+          <div key={i} className="absolute rounded-full bg-[#C4A484]" style={style} />
         ))}
       </div>
 
