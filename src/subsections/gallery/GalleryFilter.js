@@ -3,6 +3,7 @@
 // components/gallery/GalleryFilter.jsx
 "use client";
 
+
 import { motion } from 'framer-motion';
 import { FiGrid } from 'react-icons/fi';
 
