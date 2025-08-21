@@ -1,7 +1,6 @@
 
 
 
-// components/reservation/DateTimeInput.js
 import { motion } from 'framer-motion'
 
 const DateTimeInput = ({ 
@@ -11,7 +10,8 @@ const DateTimeInput = ({
   value, 
   onChange, 
   min, 
-  required = true 
+  required = true,
+  placeholder
 }) => {
   return (
     <motion.div
@@ -31,9 +31,10 @@ const DateTimeInput = ({
         id={id}
         value={value}
         onChange={onChange}
-        className="w-full px-4 py-3 rounded-md border focus:ring-2 focus:ring-[#E5B80B] focus:border-[#E5B80B] transition-all border-[#C4A484]"
+        className="w-full px-4 py-3 rounded-md border focus:ring-2 focus:ring-[#E5B80B] focus:border-[#E5B80B] transition-all border-[#C4A484] text-black placeholder-black"
         min={min}
         required={required}
+        placeholder={placeholder}
       />
     </motion.div>
   )

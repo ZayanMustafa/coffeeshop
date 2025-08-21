@@ -1,12 +1,9 @@
-// src/components/navbar.js
 "use client";
-
-
 
 import { useState, useEffect } from 'react';
 import * as Icons from 'react-icons/fi';
 import { motion } from 'framer-motion';
-import { NAV_CONFIG , NAV_ITEMS} from '@/constant/Navbar';
+import { NAV_CONFIG, NAV_ITEMS } from '@/constant/Navbar';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +28,7 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#3E2723] py-2 shadow-lg' : 'bg-#6c4b34 py-4'}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 shadow-lg' : 'py-4'}`}
       style={{ backgroundColor: scrolled ? NAV_CONFIG.colors.dark : '#6c4b34' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,24 +68,23 @@ const Navbar = () => {
                   />
                 </motion.a>
               ))}
-              {NAV_ITEMS.filter(item => item.cta).map((item) => (
-                <motion.button
-                  key={item.name}
-                  className="ml-4 px-4 py-2 rounded-md text-sm font-semibold uppercase font-montserrat tracking-wider transition-colors"
-                  style={{
-                    backgroundColor: NAV_CONFIG.colors.accent,
-                    color: NAV_CONFIG.colors.dark
-                  }}
-                  whileHover={{ 
-                    y: -2, 
-                    backgroundColor: NAV_CONFIG.colors.darkAccent,
-                    boxShadow: `0 4px 8px rgba(229, 184, 11, 0.3)`
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {NAV_CONFIG.ctaButton.text}
-                </motion.button>
-              ))}
+              {/* Fixed CTA Button with Link */}
+              <motion.a
+                href={NAV_CONFIG.ctaButton.path}
+                className="ml-4 px-4 py-2 rounded-md text-sm font-semibold uppercase font-montserrat tracking-wider transition-colors"
+                style={{
+                  backgroundColor: NAV_CONFIG.colors.accent,
+                  color: NAV_CONFIG.colors.dark
+                }}
+                whileHover={{ 
+                  y: -2, 
+                  backgroundColor: NAV_CONFIG.colors.darkAccent,
+                  boxShadow: `0 4px 8px rgba(229, 184, 11, 0.3)`
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {NAV_CONFIG.ctaButton.text}
+              </motion.a>
             </div>
           </div>
 
@@ -128,6 +124,7 @@ const Navbar = () => {
                 className="flex items-center text-white hover:bg-[#6F4E37] hover:text-[#E5B80B] px-3 py-2 rounded-md text-base font-medium"
                 style={{ color: NAV_CONFIG.colors.secondary }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setIsOpen(false)}
               >
                 <Icon name={item.icon} className="mr-2" />
                 {item.name}

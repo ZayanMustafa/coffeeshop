@@ -48,6 +48,7 @@ export const NAV_CONFIG = {
   },
   ctaButton: {
     text: 'Reserve Now',
+    path: '/reserve',
     icon: 'FiCalendar'
   }
 };

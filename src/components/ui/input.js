@@ -1,7 +1,7 @@
 
 
+// File : src/components/ui/input.js
 
-// components/reservation/InputField.js
 import { motion } from 'framer-motion'
 
 const InputField = ({ 
@@ -33,7 +33,7 @@ const InputField = ({
         id={id}
         value={value}
         onChange={onChange}
-        className="w-full px-4 py-3 rounded-md border focus:ring-2 focus:ring-[#E5B80B] focus:border-[#E5B80B] transition-all border-[#C4A484]"
+        className="w-full px-4 py-3 rounded-md border focus:ring-2 focus:ring-[#E5B80B] focus:border-[#E5B80B] transition-all border-[#C4A484] text-black placeholder-gray-400 placeholder-opacity-10"
         placeholder={placeholder}
         min={min}
         max={max}
@@ -42,6 +42,4 @@ const InputField = ({
     </motion.div>
   )
 }
-
 export default InputField
-
