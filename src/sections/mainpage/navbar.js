@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import * as Icons from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import { NAV_CONFIG , NAV_ITEMS} from '@/constant/Navbar';
-// import { NAV_ITEMS, NAV_CONFIG } from '../constants/navbar';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
