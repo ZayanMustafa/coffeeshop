@@ -1,7 +1,9 @@
 
-import { FiInstagram, FiTwitter, FiFacebook, FiMusic } from 'react-icons/fi';
+import { FiInstagram, FiFacebook, FiMusic } from 'react-icons/fi';
+import { FaXTwitter, FaTiktok  } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 import { CONTACT_INFO } from '@/constant/Contact';  
+import Link from 'next/link';
 
 
 export function SocialMedia() {
@@ -17,7 +19,7 @@ export function SocialMedia() {
   <h3 className="text-xl font-bold text-[#3E2723] mb-4">Connect Socially</h3>
   <div className="space-y-3">
     {/* Instagram */}
-    <a 
+    <Link
       href={CONTACT_INFO.socialMedia.instagram} 
       target="_blank" 
       rel="noopener noreferrer"
@@ -27,23 +29,23 @@ export function SocialMedia() {
         <FiInstagram className="text-white" size={18} />
       </span>
       <span>@havencoffee</span>
-    </a>
+    </Link>
 
     {/* Twitter */}
-    <a 
+    <Link
       href={CONTACT_INFO.socialMedia.twitter} 
       target="_blank" 
       rel="noopener noreferrer"
       className="flex items-center gap-3 text-[#6F4E37] hover:text-[#3E2723] transition-colors group"
     >
       <span className="bg-[#E5B80B] p-2 rounded-full group-hover:bg-[#3E2723] transition-colors">
-        <FiTwitter className="text-white" size={18} />
+        <FaXTwitter className="text-white" size={18} />
       </span>
       <span>@havencoffee</span>
-    </a>
+    </Link>
 
     {/* Facebook */}
-    <a 
+    <Link 
       href={CONTACT_INFO.socialMedia.facebook} 
       target="_blank" 
       rel="noopener noreferrer"
@@ -53,20 +55,20 @@ export function SocialMedia() {
         <FiFacebook className="text-white" size={18} />
       </span>
       <span>/havencoffee</span>
-    </a>
+    </Link>
 
     {/* TikTok */}
-    <a 
+    <Link 
       href="https://tiktok.com/@havencoffee" 
       target="_blank" 
       rel="noopener noreferrer"
       className="flex items-center gap-3 text-[#6F4E37] hover:text-[#3E2723] transition-colors group"
     >
       <span className="bg-[#E5B80B] p-2 rounded-full group-hover:bg-[#3E2723] transition-colors">
-        <FiMusic className="text-white" size={18} />
+        <FaTiktok className="text-white" size={18} />
       </span>
       <span>@havencoffee</span>
-    </a>
+    </Link>
   </div>
 </motion.div>
         </>
