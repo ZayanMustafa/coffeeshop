@@ -12,9 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata = {
   title: "Brew Haven Coffee Shop",
-  description: "A cozy place to enjoy your favorite brews",
+  description: "A coffee shop",
 };
 
 export default function RootLayout({ children }) {
