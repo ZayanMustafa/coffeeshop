@@ -1,6 +1,7 @@
 
 
 // File path: src/components/menu/MenuCategory.js
+
 import { MENU_DATA } from '@/constant/Home/Menu';
 import { MenuCard } from './MenuCard';
 

@@ -1,9 +1,9 @@
-'use client';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '../ui/button';
-import { useCart } from './CartContext';
-import { FiChevronDown, FiChevronUp, FiInfo } from 'react-icons/fi';
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "../ui/button";
+import { useCart } from "./CartContext";
+import { FiChevronDown, FiChevronUp, FiInfo } from "react-icons/fi";
 
 export const MenuCard = ({ item }) => {
   const [selectedOption, setSelectedOption] = useState(item.options[0]);
@@ -13,18 +13,20 @@ export const MenuCard = ({ item }) => {
 
   const handleAddToCart = () => {
     setIsAdding(true);
-    addToCart({ 
-      ...item, 
+    addToCart({
+      ...item,
       selectedOption,
-      id: `${item.id}-${selectedOption.name.replace(/\s+/g, '-').toLowerCase()}`,
-      quantity: 1
+      id: `${item.id}-${selectedOption.name
+        .replace(/\s+/g, "-")
+        .toLowerCase()}`,
+      quantity: 1,
     });
-    
+
     setTimeout(() => setIsAdding(false), 1000);
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="bg-white rounded-xl shadow-md overflow-hidden border border-[#F9F5F0]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -52,14 +54,14 @@ export const MenuCard = ({ item }) => {
         {/* Options Selector */}
         <div className="mt-4">
           <div className="flex flex-wrap gap-2 mb-4">
-            {item.options.map(option => (
+            {item.options.map((option) => (
               <motion.button
                 key={option.name}
                 onClick={() => setSelectedOption(option)}
                 className={`px-3 py-1.5 text-sm rounded-full transition-colors ${
                   selectedOption.name === option.name
-                    ? 'bg-[#3E2723] text-white'
-                    : 'bg-[#F9F5F0] text-[#3E2723] hover:bg-[#E5E0DB]'
+                    ? "bg-[#3E2723] text-white"
+                    : "bg-[#F9F5F0] text-[#3E2723] hover:bg-[#E5E0DB]"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -77,9 +79,16 @@ export const MenuCard = ({ item }) => {
           {/* Add to Cart Button */}
           <motion.div whileTap={isAdding ? {} : { scale: 0.95 }}>
             <Button
-              variant={isAdding ? "primary" : "secondary"}
               onClick={handleAddToCart}
-              className="w-full flex items-center justify-center gap-2 relative overflow-hidden h-12"
+              className="w-full flex items-center justify-center gap-2 relative overflow-hidden h-12 border-2 transition-all duration-300"
+              style={{
+                borderColor: isAdding ? "#E5B80B" : "#6F4E37",
+                color: isAdding ? "#FFFFFF" : "#6F4E37",
+                backgroundColor: isAdding ? "#E5B80B" : "#F9F5F0",
+                fontFamily: "Montserrat, sans-serif",
+              }}
+              hoverBgColor="bg-[#6F4E37]"
+              hoverTextColor="text-white"
               disabled={isAdding}
             >
               {isAdding ? (
@@ -87,29 +96,29 @@ export const MenuCard = ({ item }) => {
                   <motion.span
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="absolute"
+                    className="absolute font-semibold"
                   >
-                    Added!
+                    Added to Cart!
                   </motion.span>
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="text-white"
+                    className="text-white text-xl"
                   >
                     ✓
                   </motion.span>
                 </>
               ) : (
                 <>
-                  <span>Add to Cart</span>
-                  <span>+</span>
+                  <span className="font-medium">Add to Cart</span>
+                  <span className="text-lg font-bold">+</span>
                 </>
               )}
             </Button>
           </motion.div>
 
           {/* Details Toggle */}
-          <button 
+          <button
             onClick={() => setExpanded(!expanded)}
             className="w-full mt-3 text-center text-sm text-[#6F4E37] hover:text-[#3E2723] transition-colors flex items-center justify-center gap-1"
           >
@@ -133,7 +142,7 @@ export const MenuCard = ({ item }) => {
         {expanded && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
@@ -145,16 +154,18 @@ export const MenuCard = ({ item }) => {
                   {selectedOption.name} Details:
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
-                  {Object.entries(selectedOption.details || {}).map(([key, value]) => (
-                    <div key={key} className="bg-[#F9F5F0] p-2 rounded-lg">
-                      <p className="text-xs text-[#6F4E37] capitalize">
-                        {key.replace(/([A-Z])/g, ' $1').trim()}:
-                      </p>
-                      <p className="text-sm font-medium text-[#3E2723]">
-                        {Array.isArray(value) ? value.join(', ') : value}
-                      </p>
-                    </div>
-                  ))}
+                  {Object.entries(selectedOption.details || {}).map(
+                    ([key, value]) => (
+                      <div key={key} className="bg-[#F9F5F0] p-2 rounded-lg">
+                        <p className="text-xs text-[#6F4E37] capitalize">
+                          {key.replace(/([A-Z])/g, " $1").trim()}:
+                        </p>
+                        <p className="text-sm font-medium text-[#3E2723]">
+                          {Array.isArray(value) ? value.join(", ") : value}
+                        </p>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
 
@@ -167,10 +178,10 @@ export const MenuCard = ({ item }) => {
                   {Object.entries(item.details || {}).map(([key, value]) => (
                     <div key={key} className="bg-[#F9F5F0] p-2 rounded-lg">
                       <p className="text-xs text-[#6F4E37] capitalize">
-                        {key.replace(/([A-Z])/g, ' $1').trim()}:
+                        {key.replace(/([A-Z])/g, " $1").trim()}:
                       </p>
                       <p className="text-sm font-medium text-[#3E2723]">
-                        {Array.isArray(value) ? value.join(', ') : value}
+                        {Array.isArray(value) ? value.join(", ") : value}
                       </p>
                     </div>
                   ))}
