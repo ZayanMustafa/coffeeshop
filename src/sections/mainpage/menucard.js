@@ -1,7 +1,9 @@
 
 "use client";
 
+import { Button } from '@/components/ui/button';
 import { MENU_CATEGORIES, MENU_ITEMS } from '@/constant/ShortMenu';
+import Link from 'next/link';
 import { useState } from 'react';
 import { FiCoffee, FiChevronRight } from 'react-icons/fi';
 
@@ -74,18 +76,21 @@ const MenuPreview = () => {
 
         {/* View Full Menu Button */}
         <div className="text-center mt-16">
-          <button
-            className="px-8 py-3 rounded-md font-semibold uppercase tracking-wider border-2 hover:bg-[#6F4E37] hover:text-white transition-colors"
-            style={{ 
-              borderColor: '#6F4E37',
-              color: '#6F4E37',
-              fontFamily: 'Montserrat, sans-serif' 
+          <Link href="/menu">
+            <Button
+              variant="outline"
+              className="px-8 py-3 rounded-md font-semibold uppercase tracking-wider border-2 hover:bg-[#875a3a] hover:text-#6F4E37 transition-colors center"
+              style={{
+                borderColor: '#7c4d2bff',
+                color: '#6F4E37',
+              fontFamily: 'Montserrat, sans-serif'
             }}
           >
             View Full Menu
-          </button>
-        </div>
+          </Button>
+        </Link>
       </div>
+    </div>
     </section>
   );
 };
