@@ -4,6 +4,7 @@
 'use client';
 import { CONTACT_INFO } from '@/constant/Contact';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { FiMail, FiBriefcase, FiPackage, FiUser } from 'react-icons/fi';
 
 // In your contact page component:
@@ -26,12 +27,12 @@ export const EmailContactCard = ({ contactInfo }) => {
           <FiMail className="mt-1 flex-shrink-0 text-[#3E2723]" />
           <div>
             <p className="font-medium text-[#3E2723]">General Inquiries</p>
-            <a 
-              href={`mailto:${contactInfo.email}`}
+            <Link
+              href={`mailto:${CONTACT_INFO.email}`}
               className="hover:text-[#3E2723] transition-colors"
             >
-              {contactInfo.email}
-            </a>
+              {CONTACT_INFO.email}
+            </Link>
           </div>
         </div>
 
@@ -39,12 +40,12 @@ export const EmailContactCard = ({ contactInfo }) => {
           <FiBriefcase className="mt-1 flex-shrink-0 text-[#3E2723]" />
           <div>
             <p className="font-medium text-[#3E2723]">Business Partnerships</p>
-            <a 
-              href={`mailto:${contactInfo.businessInquiries}`}
+            <Link
+              href={`mailto:${CONTACT_INFO.businessInquiries}`}
               className="hover:text-[#3E2723] transition-colors"
             >
-              {contactInfo.businessInquiries}
-            </a>
+              {CONTACT_INFO.businessInquiries}
+            </Link>
           </div>
         </div>
 
@@ -52,12 +53,12 @@ export const EmailContactCard = ({ contactInfo }) => {
           <FiPackage className="mt-1 flex-shrink-0 text-[#3E2723]" />
           <div>
             <p className="font-medium text-[#3E2723]">Wholesale Orders</p>
-            <a 
-              href={`mailto:${contactInfo.wholesaleContact}`}
+            <Link
+              href={`mailto:${CONTACT_INFO.wholesaleContact}`}
               className="hover:text-[#3E2723] transition-colors"
             >
-              {contactInfo.wholesaleContact}
-            </a>
+              {CONTACT_INFO.wholesaleContact}
+            </Link>
           </div>
         </div>
 
@@ -65,12 +66,12 @@ export const EmailContactCard = ({ contactInfo }) => {
           <FiUser className="mt-1 flex-shrink-0 text-[#3E2723]" />
           <div>
             <p className="font-medium text-[#3E2723]">Careers</p>
-            <a 
-              href={`mailto:${contactInfo.careersEmail}`}
+            <Link
+              href={`mailto:${CONTACT_INFO.careersEmail}`}
               className="hover:text-[#3E2723] transition-colors"
             >
-              {contactInfo.careersEmail}
-            </a>
+              {CONTACT_INFO.careersEmail}
+            </Link>
           </div>
         </div>
       </div>
