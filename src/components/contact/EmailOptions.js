@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FiMail, FiBriefcase, FiPackage, FiUser } from 'react-icons/fi';
 
-// In your contact page component:
+
 
 export const EmailContactCard = ({ contactInfo }) => {
   return (
