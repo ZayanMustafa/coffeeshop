@@ -36,7 +36,7 @@ export const NAV_ITEMS = [
 export const NAV_CONFIG = {
   logo: {
     icon: 'FiCoffee',
-    text: 'BrewHaven',
+    text: 'CaféLock',
     accentText: 'Haven'
   },
   colors: {

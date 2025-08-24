@@ -1,7 +1,7 @@
 // constants/footer.js
 export const FOOTER_DATA = {
   brand: {
-    name: "BrewHaven",
+    name: "CaféLock",
     tagline: "Artisanal coffee crafted with passion since 2012. We source sustainably and brew with care.",
     logo: "/logo.svg",
     social: [
@@ -17,7 +17,7 @@ export const FOOTER_DATA = {
       weekends: "Weekends: 8am-9pm"
     },
     phone: "(503) 555-0123",
-    email: "hello@brewhaven.com"
+    email: "hello@cafelock.com"
   },
   links: [
     {
@@ -49,7 +49,7 @@ export const FOOTER_DATA = {
     }
   ],
   copyright: {
-    text: `© ${new Date().getFullYear()} BrewHaven Café. All rights reserved.`,
+    text: `© ${new Date().getFullYear()} CaféLock Café. All rights reserved.`,
     tagline: "Proudly serving specialty coffee in Portland."
   }
 };

@@ -10,7 +10,7 @@ export const TESTIMONIALS = [
   },
   {
     id: 2,
-    quote: "As a third-wave coffee enthusiast, I can confidently say BrewHaven's cold brew is best in the city.",
+    quote: "As a third-wave coffee enthusiast, I can confidently say CaféLock's cold brew is best in the city.",
     author: "James L.",
     role: "Coffee Blogger",
     rating: 5

@@ -1,6 +1,9 @@
+
 // constants/notFound.js
+
+
 export const NOT_FOUND_DATA = {
-  title: "404 - Brew Not Found",
+  title: "404 - CaféLock Not Found",
   subtitle: "Oops! This page has percolated away...",
   description: "The page you're looking for doesn't exist or has been moved. Let's get you back to some delicious coffee!",
   buttonText: "Back to Home",
