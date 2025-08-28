@@ -1,27 +1,14 @@
 "use client";
 
 import { FiStar } from 'react-icons/fi';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import { TESTIMONIALS } from '@/constant/Testimonials';
+import { Button } from '@/components/ui/button';
 
 const Testimonials = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById('testimonials');
-      if (element) {
-        const top = element.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-          setIsVisible(true);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   // Animation variants
   const container = {
@@ -60,13 +47,13 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-[#C4A484]">
+    <section id="testimonials" className="py-20 bg-[#C4A484]" ref={ref}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#3E2723', fontFamily: 'Playfair Display, serif' }}>
@@ -79,10 +66,10 @@ const Testimonials = () => {
 
         {/* Testimonial Cards */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={container}
           initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
+          animate={isInView ? "visible" : "hidden"}
         >
           {TESTIMONIALS.map((testimonial, index) => (
             <motion.div 
@@ -103,7 +90,7 @@ const Testimonials = () => {
                     variants={star}
                     custom={i}
                     initial="hidden"
-                    animate={isVisible ? "visible" : "hidden"}
+                    animate={isInView ? "visible" : "hidden"}
                     transition={{ delay: index * 0.1 + i * 0.1 }}
                   >
                     <FiStar 
@@ -118,7 +105,7 @@ const Testimonials = () => {
                 className="text-lg italic mb-6" 
                 style={{ color: '#FFFFFF', fontFamily: 'Inter, sans-serif' }}
                 initial={{ opacity: 0 }}
-                animate={isVisible ? { opacity: 1 } : {}}
+                animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: index * 0.1 + 0.5 }}
               >
                 &quot;{testimonial.quote}&quot;
@@ -128,7 +115,7 @@ const Testimonials = () => {
               <motion.div 
                 className="flex items-center"
                 initial={{ opacity: 0, x: -10 }}
-                animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: index * 0.1 + 0.7 }}
               >
                 <div className="h-10 w-10 rounded-full bg-[#C4A484] flex items-center justify-center text-[#6F4E37] font-bold mr-3">
@@ -151,11 +138,12 @@ const Testimonials = () => {
         <motion.div 
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.2 }}
         >
-          <motion.button
+          <Button
             className="px-8 py-3 rounded-md font-semibold uppercase tracking-wider"
+            href="/testimonials"
             style={{ 
               backgroundColor: '#E5B80B',
               color: '#3E2723',
@@ -169,7 +157,7 @@ const Testimonials = () => {
             whileTap={{ scale: 0.98 }}
           >
             Read More Stories
-          </motion.button>
+          </Button>
         </motion.div>
       </div>
     </section>

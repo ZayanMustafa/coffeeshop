@@ -1,4 +1,4 @@
-// File: src/components/ui/button.js (Improved version)
+// File: src/components/ui/button.js
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -15,6 +15,10 @@ export const Button = ({
   hoverTextColor,
   className = "",
   disabled = false,
+  // Add Framer Motion props
+  whileHover,
+  whileTap,
+  style,
   ...props
 }) => {
   const baseStyles = "inline-flex items-center justify-center font-semibold uppercase tracking-wider transition-all duration-300 text-center";
@@ -57,13 +61,10 @@ export const Button = ({
   `;
 
   const motionProps = {
-    whileHover: { 
-      scale: disabled ? 1 : hoverScale,
-      transition: { duration: 0.2 }
-    },
-    whileTap: { scale: disabled ? 1 : 0.95 },
+    whileHover: whileHover || { scale: disabled ? 1 : hoverScale },
+    whileTap: whileTap || { scale: disabled ? 1 : 0.95 },
     className: buttonClass,
-    style: { fontFamily: 'Montserrat, sans-serif' }
+    style: { fontFamily: 'Montserrat, sans-serif', ...style }
   };
 
   // If href is provided, use Link
