@@ -2,6 +2,8 @@
 
 
 // components/gallery/ViewMoreButton.jsx
+
+
 "use client";
 
 import { motion } from 'framer-motion';
@@ -15,7 +17,8 @@ const ViewMoreButton = ({ inView }) => {
       animate={inView ? { opacity: 1 } : {}}
       transition={{ delay: 1 }}
     >
-      <motion.button
+      <motion.link
+        href="/gallery"
         className="flex items-center justify-center mx-auto px-8 py-3 rounded-md font-semibold uppercase tracking-wider"
         style={{ 
           backgroundColor: '#E5B80B',
@@ -30,8 +33,10 @@ const ViewMoreButton = ({ inView }) => {
       >
         <FiGrid className="mr-2" />
         View Full Gallery
-      </motion.button>
+      </motion.link>
     </motion.div>
+
+    
   );
 };
 
