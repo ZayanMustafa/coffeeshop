@@ -20,7 +20,7 @@ export const CONTACT_INFO = {
     {
       name: "Uptown Roastery",
       address: "456 Bean Avenue, Coffeeville, CV 12345",
-      phone: "+1 (555) 987-6543",
+      phone: "+92 11 2345678",
       hours: {
         weekdays: "7:00 AM - 7:00 PM",
         weekends: "8:00 AM - 8:00 PM",
@@ -32,14 +32,14 @@ export const CONTACT_INFO = {
       }
     }
   ],
-  email: "hello@havencoffee.com",
+  email: "hello@coffeelock.com",
   socialMedia: {
-    instagram: "https://instagram.com/havencoffee",
-    twitter: "https://twitter.com/havencoffee",
-    facebook: "https://facebook.com/havencoffee"
+    instagram: "https://instagram.com/coffeelock",
+    twitter: "https://twitter.com/coffeelock",
+    facebook: "https://facebook.com/coffeelock"
   },
-  businessInquiries: "business@havencoffee.com",
-  wholesaleContact: "wholesale@havencoffee.com",
-  careersEmail: "careers@havencoffee.com"
+  businessInquiries: "business@coffeelock.com",
+  wholesaleContact: "wholesale@coffeelock.com",
+  careersEmail: "careers@coffeelock.com"
 };
 
