@@ -1,13 +1,12 @@
-
-
-
-// File: src/components/ui/button.js
+// File: src/components/ui/button.js (Improved version)
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export const Button = ({ 
   children, 
   onClick, 
+  href,
   variant = "primary",
   size = "medium",
   icon: Icon,
@@ -15,9 +14,10 @@ export const Button = ({
   hoverBgColor,
   hoverTextColor,
   className = "",
-  disabled = false
+  disabled = false,
+  ...props
 }) => {
-  const baseStyles = "flex items-center justify-center font-semibold uppercase tracking-wider transition-all duration-300";
+  const baseStyles = "inline-flex items-center justify-center font-semibold uppercase tracking-wider transition-all duration-300 text-center";
   
   const sizeStyles = {
     small: "px-4 py-2 text-sm",
@@ -40,28 +40,52 @@ export const Button = ({
     }
   };
 
-  return (
-    <motion.button
-      whileHover={{ 
-        scale: disabled ? 1 : hoverScale,
-        transition: { duration: 0.2 }
-      }}
-      whileTap={{ scale: disabled ? 1 : 0.95 }}
-      className={`
-        ${baseStyles} 
-        ${sizeStyles[size]} 
-        ${variantStyles[variant].base} 
-        ${variantStyles[variant].hover}
-        ${hoverTextColor ? `hover:${hoverTextColor}` : ''}
-        ${className}
-      `}
-      onClick={onClick}
-      disabled={disabled}
-      style={{ fontFamily: 'Montserrat, sans-serif' }}
-    >
+  const buttonContent = (
+    <>
       {Icon && <Icon className="mr-2" />}
       {children}
+    </>
+  );
+
+  const buttonClass = `
+    ${baseStyles} 
+    ${sizeStyles[size]} 
+    ${variantStyles[variant].base} 
+    ${variantStyles[variant].hover}
+    ${hoverTextColor ? `hover:${hoverTextColor}` : ''}
+    ${className}
+  `;
+
+  const motionProps = {
+    whileHover: { 
+      scale: disabled ? 1 : hoverScale,
+      transition: { duration: 0.2 }
+    },
+    whileTap: { scale: disabled ? 1 : 0.95 },
+    className: buttonClass,
+    style: { fontFamily: 'Montserrat, sans-serif' }
+  };
+
+  // If href is provided, use Link
+  if (href && !disabled) {
+    return (
+      <Link href={href} {...props}>
+        <motion.span {...motionProps} role="button" tabIndex={0}>
+          {buttonContent}
+        </motion.span>
+      </Link>
+    );
+  }
+
+  // Otherwise, use regular button
+  return (
+    <motion.button
+      {...motionProps}
+      onClick={onClick}
+      disabled={disabled}
+      {...props}
+    >
+      {buttonContent}
     </motion.button>
   );
-}
-
+};

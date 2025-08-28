@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { HERO_CONTENT } from "@/constant/Home/Hero";
 import { FiCalendar, FiCoffee } from "react-icons/fi";
 import { useMemo } from "react";
+import { StateGrid } from "@/components/mainpage/StateGrid";
 
 const Hero = ({ content }) => {
 
@@ -56,18 +57,22 @@ const Hero = ({ content }) => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button
-                variant="primary"
-                size="large"
-                icon={FiCalendar}
-                hoverScale={1.1}
-                hoverBgColor="bg-[#C4A484]"
-                hoverTextColor="text-white"
-                onClick={() => console.log("Book table clicked")}
-                className="shadow-lg hover:shadow-xl"
-              >
-                {HERO_CONTENT.ctaButton.primary.text}
-              </Button>
+             
+             <Button
+  variant="primary"
+  size="large"
+  icon={FiCalendar}
+  hoverScale={1.1}
+  hoverBgColor="bg-[#C4A484]"
+  hoverTextColor="text-white"
+  href="/reserve"
+  className="shadow-lg hover:shadow-xl"
+>
+  {HERO_CONTENT.ctaButton.primary.text}
+</Button>
+
+
+
 
               <Button
                 variant="secondary"
@@ -76,11 +81,14 @@ const Hero = ({ content }) => {
                 hoverScale={1.1}
                 hoverBgColor="bg-dark-200"
                 hoverTextColor="text-yellow-500"
-                onClick={() => console.log("View menu clicked")}
+                href="/menu"
                 className="shadow-lg hover:shadow-xl"
               >
                 {HERO_CONTENT.ctaButton.secondary.text}
               </Button>
+
+            
+            
             </div>
           </div>
 
@@ -93,28 +101,11 @@ const Hero = ({ content }) => {
               <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-[#C4A484] rounded-t-full"></div>
             </div>
 
+
+
             {/* Stats grid */}
-            <div className="grid grid-cols-3 gap-4 mt-12">
-              {HERO_CONTENT.stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <p
-                    className="text-4xl md:text-5xl font-bold mb-2"
-                    style={{
-                      color: "#E5B80B",
-                      fontFamily: "Montserrat, sans-serif",
-                    }}
-                  >
-                    {stat.value}
-                  </p>
-                  <p
-                    className="text-white font-medium"
-                    style={{ fontFamily: "Inter, sans-serif" }}
-                  >
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <StateGrid />
+
           </div>
         </div>
       </div>

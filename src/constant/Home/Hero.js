@@ -1,3 +1,8 @@
+
+
+
+
+
 export const HERO_CONTENT = {
   title: "Sip. Savor. Secure Your Spot.",
   subtitle: "Artisanal coffee crafted with passion in the heart of the city",
