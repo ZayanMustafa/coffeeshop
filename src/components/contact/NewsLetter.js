@@ -73,11 +73,10 @@ export function Newsletter() {
         >
           {isSubmitting ? (
             <motion.span
-              animate={{ rotate: 360 }}
               transition={{ duration: 1, repeat: Infinity }}
               className="flex justify-center"
             >
-              ⏳
+              Loading
             </motion.span>
           ) : (
             'Subscribe'
