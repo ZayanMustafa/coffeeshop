@@ -1,41 +1,35 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# ☕ CoffeeLock - Modern Coffee Shop Website
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+![CoffeeLock](https://img.shields.io/badge/Coffee-Shop-brown) ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![React](https://img.shields.io/badge/React-18-blue) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-orange) ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-Animation-purple)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A beautifully designed, responsive coffee shop website built with modern web technologies. Features smooth animations, an intuitive user interface, and seamless navigation.
 
-## Learn More
+![CoffeeLock Preview](https://via.placeholder.com/800x400/6F4E37/FFFFFF?text=CoffeeLock+Premium+Coffee+Experience)
 
-To learn more about Next.js, take a look at the following resources:
+## 🌟 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Responsive Design** - Perfectly adapted for desktop, tablet, and mobile devices
+- **Smooth Animations** - Enhanced user experience with Framer Motion animations
+- **Online Menu** - Interactive menu with categories and detailed item descriptions
+- **Reservation System** - Easy-to-use booking system for tables
+- **Gallery** - Beautiful image gallery showcasing our coffee shop
+- **Social Media Integration** - Connect with us across all platforms
+- **Performance Optimized** - Fast loading times with Next.js optimization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS with custom design system
+- **Animations**: Framer Motion
+- **Icons**: React Icons (Feather Icons)
+- **Deployment**: Vercel (Recommended)
+- **State Management**: React Hooks (useState, useEffect)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# coffeeshop
->>>>>>> f640da7d674cb41e817b46fca290d345686e1e52
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ZayanMustafa/coffeeshop.git
+   cd coffeeshop
