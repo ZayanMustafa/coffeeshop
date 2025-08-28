@@ -1,25 +1,22 @@
-
-
-
 // components/gallery/ViewMoreButton.jsx
-
-
 "use client";
 
 import { motion } from 'framer-motion';
 import { FiGrid } from 'react-icons/fi';
+import Link from 'next/link';
+
+const MotionLink = motion(Link);
 
 const ViewMoreButton = ({ inView }) => {
   return (
     <motion.div
-      className="text-center mt-16"
-      initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : {}}
-      transition={{ delay: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.5 }}
     >
-      <motion.link
+      <MotionLink
         href="/gallery"
-        className="flex items-center justify-center mx-auto px-8 py-3 rounded-md font-semibold uppercase tracking-wider"
+        className="flex items-center justify-center mx-auto px-8 py-3 text-center mt-16 rounded-md font-semibold uppercase tracking-wider w-fit"
         style={{ 
           backgroundColor: '#E5B80B',
           color: '#3E2723',
@@ -33,10 +30,8 @@ const ViewMoreButton = ({ inView }) => {
       >
         <FiGrid className="mr-2" />
         View Full Gallery
-      </motion.link>
+      </MotionLink>
     </motion.div>
-
-    
   );
 };
 
