@@ -156,7 +156,7 @@ const Testimonials = () => {
             }}
             whileTap={{ scale: 0.98 }}
           >
-            Read More Stori
+            Read More Stories
           </Button>
         </motion.div>
       </div>
