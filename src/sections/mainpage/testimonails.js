@@ -1,3 +1,6 @@
+
+
+
 "use client";
 
 import { FiStar } from 'react-icons/fi';
