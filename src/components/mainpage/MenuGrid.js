@@ -1,6 +1,4 @@
-
-
-'use client'
+"use client";
 
 import { MENU_ITEMS } from "@/constant/ShortMenu";
 import { useState } from "react";
@@ -9,18 +7,20 @@ import { Button } from "../ui/button";
 
 export const MenuGrid = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  
+
   // Get all unique categories from menu items
-  const categories = ["all", ...new Set(MENU_ITEMS.map(item => item.category))];
-  
-  const filteredItems = activeCategory === "all" 
-    ? MENU_ITEMS 
-    : MENU_ITEMS.filter((item) => item.category === activeCategory);
+  const categories = [
+    "all",
+    ...new Set(MENU_ITEMS.map((item) => item.category)),
+  ];
+
+  const filteredItems =
+    activeCategory === "all"
+      ? MENU_ITEMS
+      : MENU_ITEMS.filter((item) => item.category === activeCategory);
 
   return (
     <div className="space-y-8">
-    
-    
       {/* Category Filter Buttons */}
       <div className="flex flex-wrap gap-4 justify-center mb-8">
         {categories.map((category) => (
@@ -81,35 +81,36 @@ export const MenuGrid = () => {
                   ${item.price}
                 </span>
               </div>
-              
+
               <p
                 className="text-gray-600 mb-4 line-clamp-2"
                 style={{ color: "#6F4E37", fontFamily: "Inter, sans-serif" }}
               >
                 {item.description}
               </p>
-              
+
               {/* Category Badge */}
               <div className="mb-4">
                 <span
                   className="inline-block px-3 py-1 text-xs font-semibold rounded-full"
-                  style={{ 
-                    backgroundColor: "#F9F5F0", 
+                  style={{
+                    backgroundColor: "#F9F5F0",
                     color: "#6F4E37",
-                    fontFamily: "Montserrat, sans-serif"
+                    fontFamily: "Montserrat, sans-serif",
                   }}
                 >
                   {item.category}
                 </span>
               </div>
 
-              <button
+              <Button
+                href={`/menu/${item.id}`}
                 className="flex items-center text-sm font-semibold uppercase tracking-wider hover:text-[#E5B80B] transition-colors duration-300"
                 style={{ color: "#6F4E37" }}
-                onClick={() => console.log("View details for:", item.name)}
               >
-                View Details <FiChevronRight className="ml-1 group-hover:translate-x-1 transition-transform" />
-              </button>
+                View Details{" "}
+                <FiChevronRight className="ml-1 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
           </div>
         ))}
@@ -118,12 +119,19 @@ export const MenuGrid = () => {
       {/* No Items Message */}
       {filteredItems.length === 0 && (
         <div className="text-center py-12">
-          <FiCoffee className="h-16 w-16 mx-auto mb-4" style={{ color: "#6F4E37" }} />
-          <h3 className="text-xl font-bold" style={{ color: "#3E2723", fontFamily: "Playfair Display, serif" }}>
+          <FiCoffee
+            className="h-16 w-16 mx-auto mb-4"
+            style={{ color: "#6F4E37" }}
+          />
+          <h3
+            className="text-xl font-bold"
+            style={{ color: "#3E2723", fontFamily: "Playfair Display, serif" }}
+          >
             No items found in this category
           </h3>
           <p style={{ color: "#6F4E37", fontFamily: "Inter, sans-serif" }}>
-            Try selecting a different category or check back later for new items.
+            Try selecting a different category or check back later for new
+            items.
           </p>
         </div>
       )}
