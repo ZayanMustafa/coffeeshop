@@ -2,6 +2,7 @@
 'use client';
 
 import { NOT_FOUND_DATA } from '@/constant/NotFound';
+import Navbar from '@/sections/mainpage/navbar';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -40,6 +41,9 @@ const NotFoundComponent = () => {
   };
 
   return (
+
+    <>
+    <Navbar />
     <div style={{
       backgroundColor: NOT_FOUND_DATA.theme.background,
       minHeight: '100vh',
@@ -165,6 +169,9 @@ const NotFoundComponent = () => {
         </motion.div>
       </motion.div>
     </div>
+    
+    
+    </>
   );
 };
 

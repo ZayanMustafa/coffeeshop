@@ -1,8 +1,12 @@
+
+
+
 // components/Footer.jsx
 'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaXTwitter } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 import { 
   FiCoffee, 
@@ -11,15 +15,13 @@ import {
   FiPhone, 
   FiMail, 
   FiInstagram, 
-  FiTwitter, 
   FiFacebook 
 } from 'react-icons/fi';
 import { FOOTER_DATA } from '@/constant/Footer';
-// import { FOOTER_DATA } from '@/constants/footer';
 
 const iconComponents = {
   FiInstagram,
-  FiTwitter,
+  FaXTwitter,
   FiFacebook
 };
 

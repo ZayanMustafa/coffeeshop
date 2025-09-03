@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FiPackage, FiSettings, FiCoffee, FiFeather } from 'react-icons/fi';
 import { BREWING_STEPS } from '@/constant/Process';
+import Link from 'next/link';
 
 const BrewingStep = ({ step, index, controls }) => {
   return (
@@ -172,7 +173,11 @@ const BrewingProcess = () => {
             }}
             whileTap={{ scale: 0.98 }}
           >
-            Book a Brewing Workshop
+            <Link
+              href="/workshops/brewing"
+            >
+              Book a Brewing Workshop
+            </Link>
           </motion.button>
         </motion.div>
       </div>

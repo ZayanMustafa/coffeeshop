@@ -6,7 +6,7 @@ export const FOOTER_DATA = {
     logo: "/logo.svg",
     social: [
       { icon: "FiInstagram", url: "#" },
-      { icon: "FiTwitter", url: "#" },
+      { icon: "FaXTwitter", url: "#" },
       { icon: "FiFacebook", url: "#" }
     ]
   },
