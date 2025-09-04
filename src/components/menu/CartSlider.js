@@ -165,6 +165,7 @@ export const CartSidebar = () => {
                     <span className="font-bold text-[#3E2723]">${(totalPrice * 1.1).toFixed(2)}</span>
                   </div>
                   <Button
+                    href="/checkout"
                     variant="primary" 
                     className="w-full py-3"
                     whileHover={{ scale: 1.02 }}
